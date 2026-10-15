@@ -67,21 +67,3 @@ At the 0.30 threshold, flood recall increased while flood precision decreased to
 
 These are impurity-based scores from the fitted Random Forest; they indicate model reliance, not causal influence.
 
-## Limitations and interpretation
-
-- The predictors are based on a 2025 Sentinel-2 composite, while the flood labels combine historical events from different dates.
-- The flood inventory and satellite observations have coverage, classification, and masking limitations that should be reviewed before interpretation.
-- Random pixel-level splitting can place nearby, spatially correlated samples in both training and test sets, making the reported performance optimistic for geographic transfer.
-- The flood class is rare in the sampled data; accuracy alone is not an adequate measure of performance.
-- Susceptibility thresholds of 0.30 and 0.60 are exploratory, not calibrated engineering thresholds.
-- The map represents susceptibility patterns only; it does not model flood depth, exposure, vulnerability, or real-time hazard.
-
-Use spatially blocked and preferably temporally independent validation, verify source masks and event labels, and calibrate thresholds against independent observations before drawing operational conclusions.
-
-## Data sources
-
-- Sentinel-2 Surface Reflectance Harmonized (`COPERNICUS/S2_SR_HARMONIZED`)
-- SRTM 1 Arc-Second Global (`USGS/SRTMGL1_003`)
-- Global Flood Database (`GLOBAL_FLOOD_DB/MODIS_EVENTS/V1`)
-
-Follow each provider's terms and cite the datasets appropriately when redistributing results.
